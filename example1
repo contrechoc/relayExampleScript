@@ -1,0 +1,27 @@
+//relay example script
+
+void setup() {
+
+  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(5, OUTPUT);
+  digitalWrite(7, HIGH);
+  digitalWrite(5, LOW);
+}
+
+void loop() {
+  //reading sensor input
+  int readingSensor = analogRead(A3);
+
+  //switching on the input of the sensor
+  if ( readingSensor < 500) {
+    digitalWrite(6, HIGH);   // switch on
+    delay(10);
+  }
+  else
+  {
+    digitalWrite(6, LOW);    // switch off
+    delay(10);
+  }
+}
